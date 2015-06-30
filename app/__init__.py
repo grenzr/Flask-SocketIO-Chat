@@ -11,8 +11,7 @@ def create_app(debug=False):
     app.config['SECRET_KEY'] = 'gjr39dkjn344_!67#'
 
     from .main import main as main_blueprint
-    app.register_blueprint(main_blueprint)
+    app.register_blueprint(main_blueprint, url_prefix='/sockettest')
 
     socketio.init_app(app)
     return app
-
